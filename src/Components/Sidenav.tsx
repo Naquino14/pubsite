@@ -29,7 +29,7 @@ const Sidenav: React.FC<Props> = ({state, ontoggle}) => {
           <hr className='sidenav_separator' />
           <Link className='nostyle sidenav_link fancykarma' to='#'>Resume</Link>
           <hr className='sidenav_separator' />
-          <a className='nostyle sidenav_link fancykarma' href='https://github.com/Naquino14/CSH-Hackathon-2022'>Source Code</a>
+          <a className='nostyle sidenav_link fancykarma' href='https://github.com/Naquino14/pubsite'>Source Code</a>
           <p className='sidenav_space2'/>
           <p className='sidenav_footer'>Hey there! Im built with <s>ASP.NET Razor Pages</s> React.TS!</p>
         </div>
