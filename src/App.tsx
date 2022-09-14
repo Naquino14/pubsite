@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { HashRouter as Router, Route, Link, Routes, BrowserRouter } from 'react-router-dom'
+import { render } from 'react-dom'
+import Home from './Pages/Home'
+import Navbar from './Components/Navbar'
+import Sidenav from './Components/Sidenav'
+import './App.css'
+import AboutMe from './Pages/AboutMe'
+import Projects from './Pages/Projects'
 
 function App() {
+  const [state, setState] = React.useState<boolean>(false)
+  const onToggleSidenav = () => setState(!state)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='home-bg'>
+      <BrowserRouter>
+        <Sidenav state={state} ontoggle={onToggleSidenav}/>
+        <Navbar/> 
+        <div>
+          <Routes>
+              <Route path="/" element={<Home/>} />
+              <Route path='/aboutme' element={<AboutMe/>}/>
+              <Route path='/projects' element={<Projects/>}/>
+          </Routes>
+        </div>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

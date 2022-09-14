@@ -1,0 +1,16 @@
+.navbar_container {
+    background-color: #e6e6e6;
+    width: 100vw;
+    height: 15%;
+    opacity: 50%;
+    text-align: center;
+}
+
+.navbar_name {
+    color: rgba(0, 0, 0, 50);
+    width: auto;
+    font-size: 70px;
+    margin: auto;
+    padding-top: 20px;
+    overflow: hidden;
+}

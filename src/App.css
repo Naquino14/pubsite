@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: 'Blox2';
+    src: url('Assets/Blox2.ttf')format('truetype');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: 'KarmaFuture';
+    src: url('Assets/KarmaFuture.ttf')
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-bg {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(102, 0, 0);
+    background: linear-gradient(90deg, rgba(102, 0, 0, 1) 0%, rgba(0, 35, 102, 1) 69%);
+    overflow-x: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.aboutmeimg {
+    background-image: url(Assets/blobaboutmecover3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    background-position: center;
+    /* i cant put the img props in another css class???*/
 }
 
-.App-link {
-  color: #61dafb;
+.projectsimg {
+    background-image: url(Assets/blobprojectscover.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    background-position: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.githubimg {
+    background-image: url(Assets/blobgithubcover.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    background-position: center;
+}
+
+a.nostyle {
+    text-decoration: inherit;
+    cursor: auto;
+}
+
+a.nostyle :visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+.fancyblox {
+    font-family: Blox2;
+}
+
+.fancykarma {
+    font-family: KarmaFuture;
 }
