@@ -8,6 +8,11 @@
     src: url('Assets/KarmaFuture.ttf')
 }
 
+@font-face {
+    font-family: 'RighteousRegular';
+    src: url('Assets/Righteous-Regular.ttf');
+}
+
 .home-bg {
     width: 100vw;
     height: 100vh;
@@ -58,4 +63,8 @@ a.nostyle :visited {
 
 .fancykarma {
     font-family: KarmaFuture;
+}
+
+.fancyrighteous {
+    font-family: RighteousRegular;
 }

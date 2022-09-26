@@ -9,10 +9,13 @@ type Props = {
 }
 
 const Sidenav: React.FC<Props> = ({state, ontoggle}) => {
+  const [hover, setHover] = React.useState<boolean>(false)
+  // TODO: scroll detection to change sidenav button thing color to and from white
+
   return (
     <>
-      <div className='sidenav' style={state 
-        ? {width: '300px', paddingLeft: '0px'} 
+      <div className='sidenav' style={
+        state ? {width: '300px', paddingLeft: '0px'} 
         : {width: 0, paddingLeft: '0'}}>
         <div className='sidenav_links'>
           <h1 className='sidenav_title fancykarma'>Welcome!</h1>
@@ -34,10 +37,12 @@ const Sidenav: React.FC<Props> = ({state, ontoggle}) => {
           <p className='sidenav_footer'>Hey there! Im built with <s>ASP.NET Razor Pages</s> React.TS!</p>
         </div>
       </div>
-      <button onClick={ontoggle} className='sidenav_button' style={
+      <button onClick={ontoggle} className={
+        `sidenav_button ${hover ? 'sidenav_button-hover' : ''}`
+      } style={
         state ? {float: 'left', marginLeft: '245px'}
         : {marginLeft: '15px'}
-      }>
+      } onMouseOver={() => {setHover(true)}} onMouseLeave={() => {setHover(false)}}>  
         {state ? 'X' : '<'}
       </button>
     </>

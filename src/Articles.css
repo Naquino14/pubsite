@@ -1,1 +1,38 @@
 /* Use this file to define CSS classes used by all articles (like about me)*/
+.article {
+    margin: 50px;
+    color: white;
+    font-family: RighteousRegular;
+}
+
+.article p {
+    font-size: 20px;
+}
+
+.article button {
+    background-color: rgba(194, 194, 194, 0.5);
+    padding: 10px;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    border: 2px solid lightgray;
+    border-radius: 12px;
+}
+
+.article a {
+    cursor: auto;
+    color: #cdbf00;
+}
+
+.article a :visited {
+    color: inherit;
+    cursor: auto;
+}
+
+.article h2 {
+    color: #bcbcbc;
+}
+
+.article h4 {
+    color: #bcbcbc;
+}
