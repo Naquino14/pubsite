@@ -6,22 +6,23 @@ const AboutMe: React.FC = () => {
   return (
     <div className='article'>
       <title>About Me</title>
-      <p>About Me paragraph</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <button onClick={(e) => {e.preventDefault(); alert('hey there!')}}>This is a funky lil button.</button>
-      <h1>This is h1!</h1>
-      <h2>This is h2!</h2>
-      <h3>This is h3!</h3>
-      <h4>This is h4!</h4>
-      <h5>This is h5!</h5>
-      <h6>This is h6!</h6>
-      <Link to='/aboutme'>This is an anchor </Link> 
+      <h1 className='center'>Hey There!</h1>
+      <p>My name is Nathaniel Aquino, but I prefer the name Nate. Im currently a student @ Rochester Institute of Technology.</p>
+      <p>I <u>really</u> love software. Programming is one of my favorite hobbies. I program primarily in C#, however I also know:</p>
       <ul>
-        <li>This an li!</li>
-        <li>This is also an li!</li>
+        <li>Typescript</li>
+        <li>Java</li>
+        <li>Python</li>
+        <li>SQL</li>
+        <li>HTML/CSS</li>
       </ul>
-      <s>This is a strike</s><p/>
-      <u>This is an underline</u>
+      <p>Some of my other skills include:</p>
+      <ul>
+        <li>Workspace management (Associated with starbucks)</li>
+        <li>PCB and Part Designing in Autodesk Eagle/Inventor</li>
+      </ul>
+      <p>Fun fact: I have been competing in google kickstart for 2 years!</p>
+      <p>If you havent already, you can check out my github <a href='https://github.com/naquino14'>here.</a></p>
     </div>
   )
 }
