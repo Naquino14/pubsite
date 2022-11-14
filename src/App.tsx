@@ -9,6 +9,22 @@ import AboutMe from './Pages/AboutMe'
 import Projects from './Pages/Projects'
 
 function App() {
+
+  if ((process.env.REACT_APP_DISABLE_LIVE_RELOAD ?? 'false') === 'true') {
+    console.info('Live reload disabled')
+    var WS = window.WebSocket;
+    const DevWebSocket = (s: string) => {
+      if (s === "ws://localhost:3000/sockjs-node") {
+        console.info("[DEV NOTICE] Live Reload Has Been Disabled");
+        return {}
+      } else {
+        // Pass through other usage of sockets
+        return new WS(s);
+      }
+    }
+    window.WebSocket = DevWebSocket as any;
+  }
+
   const [state, setState] = React.useState<boolean>(false)
   const onToggleSidenav = () => setState(!state)
   return (
