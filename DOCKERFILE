@@ -1,17 +1,28 @@
-FROM node:12.17.0-alpine
-WORKDIR /usr
-COPY package.json ./
-COPY tsconfig.json ./
-COPY src ./src
-RUN ls -a
+# STAGE 1
+FROM node:12-alpine as builder
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+WORKDIR /home/node/app
+COPY package*.json ./
+RUN npm config set unsafe-perm true
+RUN npm install -g typescript
+RUN npm install -g ts-node
+USER node
 RUN npm install
+COPY --chown=node:node . .
 RUN npm run build
-## this is stage two , where the app actually runs
-FROM node:12.17.0-alpine
-WORKDIR /usr
-COPY package.json ./
-RUN npm install --only=production
-COPY --from=0 /usr/dist .
-RUN npm install pm2 -g
+
+# STAGE 2
+FROM node:12-alpine
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+WORKDIR /home/node/app
+COPY package*.json ./
+USER node
+RUN npm install --production
+COPY --from=builder /home/node/app/build ./build
+
+COPY --chown=node:node .env .
+COPY --chown=node:node  /config ./config
+COPY --chown=node:node  /public ./public
+
 EXPOSE 8080
-CMD ["pm2-runtime","app.js"]
+CMD [ "node", "build/server.js" ]
