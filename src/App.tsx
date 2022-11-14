@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
-import { HashRouter as Router, Route, Link, Routes, BrowserRouter } from 'react-router-dom'
-import { render } from 'react-dom'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Home from './Pages/Home'
 import Navbar from './Components/Navbar'
 import Sidenav from './Components/Sidenav'
@@ -15,13 +14,13 @@ function App() {
   return (
     <div className='home-bg'>
       <BrowserRouter>
-        <Sidenav state={state} ontoggle={onToggleSidenav}/>
-        <Navbar/> 
+        <Sidenav state={state} ontoggle={onToggleSidenav} />
+        <Navbar />
         <div>
           <Routes>
-              <Route path="/" element={<Home/>} />
-              <Route path='/aboutme' element={<AboutMe/>}/>
-              <Route path='/projects' element={<Projects/>}/>
+            <Route path="/" element={<Home />} />
+            <Route path='/aboutme' element={<AboutMe />} />
+            <Route path='/projects' element={<Projects />} />
           </Routes>
         </div>
       </BrowserRouter>
