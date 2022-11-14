@@ -14,7 +14,7 @@ function App() {
     console.info('Live reload disabled')
     var WS = window.WebSocket;
     const DevWebSocket = (s: string) => {
-      if (s === "ws://localhost:3000/sockjs-node") {
+      if (s === `wss://${window.location.hostname}${window.location.port ? `:${window.location.port}` : ''}/ws`) {
         console.info("[DEV NOTICE] Live Reload Has Been Disabled");
         return {}
       } else {
