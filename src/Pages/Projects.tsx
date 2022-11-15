@@ -3,7 +3,9 @@ import '../Articles.css'
 
 const Projects: React.FC = () => {
   return (
-    <div className='article'>Projects</div>
+    <div className='article'>
+      <h1 className='center'>Projects</h1>
+    </div>
   )
 }
 
