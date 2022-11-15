@@ -8,8 +8,8 @@ const Home: React.FC = () => {
   return (
     <div className='blob_container'>
       <Blob imagestyle={'aboutmeimg'} onBlobClick={() => { nav('/aboutme') }} label={'About Me'} />
-      <Blob imagestyle={'projectsimg'} onBlobClick={null} label={'Projects'} />
-      <Blob imagestyle={'githubimg'} onBlobClick={null} label={'Github'} />
+      <Blob imagestyle={'projectsimg'} onBlobClick={() => { nav('/projects') }} label={'Projects'} />
+      <Blob imagestyle={'githubimg'} onBlobClick={() => { window.open('https://github.com/naquino14', '_self') }} label={'Github'} />
     </div>
   )
 }

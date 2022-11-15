@@ -15,13 +15,21 @@ const AboutMe: React.FC = () => {
         <li>SQL</li>
         <li>HTML/CSS</li>
       </ul>
-      <p>Some of my other skills include:</p>
+      <p>Some of my skills include:</p>
       <ul>
-        <li>Workspace management (Associated with starbucks)</li>
-        <li>PCB and Part Designing in Autodesk Eagle/Inventor</li>
+        <li>Algorithm development</li>
+        <li>IDEs like Visual Studio, Visual Studio Code</li>
+        <li>Frontend and Backend development</li>
+        <li>Containerization with docker</li>
+        <li>Container orchestration with OKD (This website is running on a container 🤯)</li>
+        <li>Version control with Git and Github</li>
+        <li>Workspace management</li>
+        <li>Embedded programming</li>
       </ul>
-      <p>Fun fact: I have been competing in google kickstart for 2 years!</p>
-      <p>If you havent already, you can check out my github <a href='https://github.com/naquino14'>here.</a></p>
+      <h1>Some fun facts about me:</h1>
+      <p>I have been competing in google kickstart for 2 years! Im also a Google FooBar invitee.</p>
+      <p>My favorite foods are Brazilian pão de queijo and guacamole.</p>
+      <p><b>PSST!</b> If you havent already, you can check out my github <a href='https://github.com/naquino14'>here.</a></p>
     </div>
   )
 }
