@@ -23,6 +23,7 @@
     color: #660000;
     margin-top: 24px;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .sidenav_button-hover {
@@ -63,6 +64,7 @@
 .sidenav_link {
     color: #fff;
     font-size: 30px;
+    cursor: pointer !important;
 }
 
 .sidenav_link :hover {
