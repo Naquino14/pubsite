@@ -138,7 +138,15 @@ const Projects: React.FC = () => {
     console.log('fetching github data')
     fetchProfile().then(setProfile)
     fetchRepos().then(setRepos)
-  }, [])
+
+    // sort repos by last updated
+    repos?.sort((a, b) => {
+      return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+    })
+
+    // keep only the 5 most recent repos
+    setRepos(repos?.slice(0, 5))
+  }, [repos])
 
   console.log(profile)
   console.log(repos)
