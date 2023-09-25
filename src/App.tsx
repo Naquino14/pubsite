@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Home from './Pages/Home'
@@ -34,9 +34,9 @@ function App() {
         <Navbar />
         <div>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path='/aboutme' element={<AboutMe />} />
-            <Route path='/projects' element={<Projects />} />
+            <Route path="/" element={<Home setSidenav={setState} />} />
+            <Route path='/aboutme' element={<AboutMe setSidenav={setState} />} />
+            <Route path='/projects' element={<Projects setSidenav={setState} />} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -14,6 +14,10 @@ const Sidenav: React.FC<Props> = ({ state, ontoggle }) => {
 
   return (
     <>
+      <div className='clicktrap' onClick={ontoggle} style={
+        state ? { width: '100%', height: '100%' }
+          : { display: 'none', width: '0', height: '0' }
+      } />
       <div className='sidenav' style={
         state ? { width: '300px', paddingLeft: '0px' }
           : { width: 0, paddingLeft: '0' }}>

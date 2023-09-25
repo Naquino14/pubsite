@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Articles.css'
+import { useLocation } from 'react-router-dom'
 
-const AboutMe: React.FC = () => {
+interface Props {
+  setSidenav: (value: React.SetStateAction<boolean>) => void
+}
+
+
+const AboutMe: React.FC<Props> = ({ setSidenav }) => {
+  const location = useLocation()
+  useEffect(() => {
+    setSidenav(false)
+  }, [location, setSidenav]);
+
   return (
     <div className='article'>
       <title>About Me</title>

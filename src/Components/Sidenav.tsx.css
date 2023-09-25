@@ -76,3 +76,10 @@
     color: #b5b5b5;
     font-size: 12px;
 }
+
+.clicktrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(0, 0, 0, .5);
+}

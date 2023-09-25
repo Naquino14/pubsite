@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import '../Articles.css'
+import { useLocation } from 'react-router-dom'
 
 interface GithubProfile {
   login: string
@@ -118,6 +119,10 @@ interface GitHubRepo {
   default_branch: string
 }
 
+interface Props {
+  setSidenav: (value: React.SetStateAction<boolean>) => void
+}
+
 const fetchProfile = async () => {
   const response = await fetch('https://api.github.com/users/naquino14');
   const data: GithubProfile = JSON.parse(await response.text());
@@ -130,7 +135,13 @@ const fetchRepos = async () => {
   return data;
 }
 
-const Projects: React.FC = () => {
+const Projects: React.FC<Props> = ({ setSidenav }) => {
+
+  const location = useLocation()
+  useEffect(() => {
+    setSidenav(false)
+  }, [location, setSidenav]);
+
   // const [profile, setProfile] = React.useState<GithubProfile>()
   // const [repos, setRepos] = React.useState<GitHubRepo[]>()
 
