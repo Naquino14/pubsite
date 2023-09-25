@@ -28,13 +28,13 @@
 }
 
 .article a {
-    cursor: auto;
+    cursor: pointer;
     color: #cdbf00;
 }
 
 .article a :visited {
     color: inherit;
-    cursor: auto;
+    cursor: pointer;
 }
 
 .article h2 {
