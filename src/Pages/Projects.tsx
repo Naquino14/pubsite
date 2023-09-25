@@ -131,31 +131,32 @@ const fetchRepos = async () => {
 }
 
 const Projects: React.FC = () => {
-  const [profile, setProfile] = React.useState<GithubProfile>()
-  const [repos, setRepos] = React.useState<GitHubRepo[]>()
+  // const [profile, setProfile] = React.useState<GithubProfile>()
+  // const [repos, setRepos] = React.useState<GitHubRepo[]>()
 
-  useEffect(() => {
-    console.log('fetching github data')
-    fetchProfile().then(setProfile)
-    fetchRepos().then(setRepos)
+  // useEffect(() => {
+  //   console.log('fetching github data')
+  //   fetchProfile().then(setProfile)
+  //   fetchRepos().then(setRepos)
 
-    // sort repos by last updated
-    repos?.sort((a, b) => {
-      return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
-    })
+  //   // sort repos by last updated
+  //   repos?.sort((a, b) => {
+  //     return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+  //   })
 
-    // keep only the 5 most recent repos
-    setRepos(repos?.slice(0, 5))
-  }, [repos])
+  //   // keep only the 5 most recent repos
+  //   setRepos(repos?.slice(0, 5))
+  // }, [repos])
 
-  console.log(profile)
-  console.log(repos)
+  // console.log(profile)
+  // console.log(repos)
 
   return (
     <div className='article'>
       <h1 className='center'>Projects</h1>
       <h2 className='center'>Here are my most recent commits to GitHub:</h2>
       <p className='center article'>WIP Because github ratelimited me :(</p>
+      <p className='center article'>In the meantime, checkout my resume <a href='https://csh.rit.edu/~fish/Nathaniel%20Aquino%20-%20Resume.pdf'>here</a>, or my <a href='https://github.com/naquino14'>github</a>.</p>
     </div>
   )
 }
